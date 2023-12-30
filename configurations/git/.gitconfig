@@ -1,0 +1,78 @@
+[alias]
+    cfg = config --list --show-origin
+    me = log --author="{{ git_email }}"
+    ls = log --pretty=summary
+    st = status
+    cm = commit
+    cma = commit --amend
+    cp = cherry-pick
+
+[commit]
+    gpgSign = true
+    verbose = true
+
+[core]
+    editor = vim
+
+[diff]
+    tool = vimdiff 
+
+[difftool]
+    prompt = false
+
+[fetch]
+    fsckObjects = true 
+
+[grep]
+    lineNumber = true
+
+[http]
+    sslTry = true
+
+[init]
+    defaultBranch = main
+
+[merge]
+    tool = vimdiff 
+
+[mergetool]
+    prompt = false
+
+[pretty]
+    summary = format:%C(italic brightcyan)%h%Creset [%C(brightmagenta)%G?%Creset]%C(brightred)%d%Creset %s %C(brightyellow)(%cr)%C(dim italic white) by %an <%ae>%Creset %n 
+
+[protocol "git"]
+    allow = never
+
+[protocol "http"]
+    allow = never
+
+[rebase]
+    abbreviateCommands = true
+    missingCommitsCheck = warn
+
+[status]
+    branch = true
+    showStash = true
+
+[tag]
+    forceSignAnnotated = true
+    gpgSign = true
+
+[transfer]
+    fsckObjects = true
+
+[url "https://"]
+    insteadOf = http://
+    insteadOf = git://
+
+[user]
+    email = git@kernelsoup.com
+    name = kernelsoup
+    signingKey = 89160BA42C4919F8 
+
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
